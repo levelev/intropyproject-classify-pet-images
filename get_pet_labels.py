@@ -50,8 +50,7 @@ def get_pet_labels(image_dir):
 
     
 def pet_label(image):
-  pet_label = ""
   pet_label = image.lower().replace("_", " ").replace(".jpg", " ")
-  pet_label  = re.sub("\d+", "", pet_label).strip()
+  pet_label = re.sub("\d+", "", pet_label).strip()
 
   return pet_label
