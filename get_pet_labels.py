@@ -42,4 +42,59 @@ def get_pet_labels(image_dir):
     """
     # Replace None with the results_dic dictionary that you created with this
     # function
-    return None
+    results_dic = dict()
+    pet_images_from_dir = listdir(image_dir)
+
+        # Creates list of files in directory
+    pet_images_from_dir = listdir(image_dir)
+    
+    
+    # Processes through each file in the directory, extracting only the words
+    # of the file that contain the pet image label
+    for idx in range(0, len(pet_images_from_dir), 1):
+       
+       # Skips file if starts with . (like .DS_Store of Mac OSX) because it 
+       # isn't an pet image file
+       if pet_images_from_dir[idx][0] != ".":
+           
+           # Creates temporary label variable to hold pet label name extracted 
+           pet_label = ""
+
+           # TODO: 2a. BELOW REPLACE pass with CODE that will process each 
+           #          filename in the pet_images_from_dir list to extract the dog breed 
+           #          name from the filename. Recall that each filename can be
+           #          accessed by pet_images_from_dir[idx]. Be certain to place the 
+           #          extracted dog breed name in the variable pet_label 
+           #          that's created as an empty string ABOVE
+           pass
+
+           # If filename doesn't already exist in dictionary add it and it's
+           # pet label - otherwise print an error message because indicates 
+           # duplicate files (filenames)
+           if pet_images_from_dir[idx] not in results_dic:
+              results_dic[pet_images_from_dir[idx]] = [pet_label]
+              
+           else:
+               print("** Warning: Duplicate files exist in directory:", 
+                     pet_images_from_dir[idx])
+ 
+    # TODO 2b. Replace None with the results_dic dictionary that you created
+    # with this function
+
+
+
+
+
+
+
+
+
+
+
+
+    # for image in pet_images_from_dir:
+    #     results_dic[image] = image.lower().replace("_", " ")
+    #     print(results_dic)
+    
+
+    return results_dic
