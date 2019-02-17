@@ -20,10 +20,6 @@
 from os import listdir
 import re
 
-# TODO 2: Define get_pet_labels function below please be certain to replace None
-#       in the return statement with results_dic dictionary that you create 
-#       with this function
-# 
 def get_pet_labels(image_dir):
     """
     Creates a dictionary of pet labels (results_dic) based upon the filenames 
@@ -41,51 +37,21 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    # Replace None with the results_dic dictionary that you created with this
-    # function
     results_dic = dict()
     pet_images_from_dir = listdir(image_dir)
-    
-    
-    # Processes through each file in the directory, extracting only the words
-    # of the file that contain the pet image label
-    for idx in range(0, len(pet_images_from_dir), 1):
-       
-       # Skips file if starts with . (like .DS_Store of Mac OSX) because it 
-       # isn't an pet image file
-       if pet_images_from_dir[idx][0] != ".":
-           
-           # Creates temporary label variable to hold pet label name extracted 
-           pet_label = ""
 
-           # process each filename in the pet_images_from_dir list to extract the dog breed 
-           # name from the filename.
-           pet_label = pet_images_from_dir[idx].lower().replace("_", " ").replace(".jpg", " ")
-           pet_label  = re.sub("\d+", "", pet_label).strip()
+    for image in pet_images_from_dir:
+        if image[0] != "." and image not in results_dic:
+            results_dic[image] = pet_label(image)
+        else:
+            print("** Warning: Duplicate files exist in directory:", image)
 
-
-           # If filename doesn't already exist in dictionary add it and it's
-           # pet label - otherwise print an error message because indicates 
-           # duplicate files (filenames)
-           if pet_images_from_dir[idx] not in results_dic:
-              results_dic[pet_images_from_dir[idx]] = [pet_label]
-           else:
-               print("** Warning: Duplicate files exist in directory:", 
-                     pet_images_from_dir[idx])
- 
     return results_dic
 
-
-
-
-
-
-
-
-
-
-    # for image in pet_images_from_dir:
-    #     results_dic[image] = image.lower().replace("_", " ")
-    #     print(results_dic)
     
+def pet_label(image):
+  pet_label = ""
+  pet_label = image.lower().replace("_", " ").replace(".jpg", " ")
+  pet_label  = re.sub("\d+", "", pet_label).strip()
 
+  return pet_label
