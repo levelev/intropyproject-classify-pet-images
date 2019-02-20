@@ -75,13 +75,10 @@ def classify_images(images_dir, results_dic, model):
         # defines truth as pet image label 
         truth = results_dic[key][0]
 
-
-        print(results_dic)
-
         if truth in model_label:
-            results_dic[key].extend(model_label)
+            results_dic[key].extend([model_label, 1])
         else:
-            results_dic[key].extend(0)
+            results_dic[key].extend([model_label, 0])
 
 
 
