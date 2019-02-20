@@ -1,0 +1,69 @@
+Command Line Arguments:
+     dir = uploaded_images/ 
+    arch = resnet 
+ dogfile = dognames.txt
+
+Pet Image Label Dictionary has 3 key-value pairs.
+Below are 3 of them:
+ 1 key:                    Coin_01.jpg  label:                       coin
+ 2 key:                     Dog_01.jpg  label:                        dog
+ 3 key:                     Owl_01.jpg  label:                        owl
+
+     MATCH:
+
+ NOT A MATCH:
+
+                   Coin_01.jpg: 
+Real:                       coin   Classifier:                           tray
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:             labrador retriever
+
+                    Owl_01.jpg: 
+Real:                        owl   Classifier:                          acorn
+
+# Total Images 3 # Matches: 0 # NOT Matches: 3
+
+     MATCH:
+
+ NOT A MATCH:
+
+                   Coin_01.jpg: 
+Real:                       coin   Classifier:                           tray  
+PetLabelDog: 0  ClassLabelDog: 0
+
+                    Dog_01.jpg: 
+Real:                        dog   Classifier:             labrador retriever  
+PetLabelDog: 1  ClassLabelDog: 1
+
+                    Owl_01.jpg: 
+Real:                        owl   Classifier:                          acorn  
+PetLabelDog: 0  ClassLabelDog: 0
+
+# Total Images 3 # Matches: 0 # NOT Matches: 3
+
+ ** Statistics from calculates_results_stats() function:
+N Images:  3  N Dog Images:  1  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog:   0.0  Pct Corr Breed:   0.0
+
+ ** Check Statistics - calculated from this function as a check:
+N Images:  3  N Dog Images:  1  N NotDog Images:  2 
+Pct Corr dog: 100.0 Pct Corr NOTdog: 100.0  Pct Corr Breed:   0.0
+
+
+*** Results Summary for CNN Model Architecture RESNET ***
+N Images            :   3
+N Dog Images        :   1
+N Not-Dog Image     :   2
+ 
+pct_match: 0.0
+pct_correct_dogs: 100.0
+pct_correct_breed: 0.0
+pct_correct_notdogs: 0.0
+
+INCORRECT Dog/NOT Dog Assignments:
+
+INCORRECT Dog Breed Assignment:
+Real:                        dog   Classifier:             labrador retriever
+
+** Total Elapsed Runtime: 0:0:0
