@@ -42,7 +42,7 @@ def get_pet_labels(image_dir):
 
     for image in pet_images_from_dir:
         if image[0] != "." and image not in results_dic:
-            results_dic[image] = pet_label(image)
+            results_dic[image] = [pet_label(image)]
         else:
             print("** Warning: Duplicate files exist in directory:", image)
 
