@@ -72,7 +72,8 @@ def adjust_results4_isadog(results_dic, dogfile):
     with open(dogfile, "r") as infile:
         for line in infile:
           # Reads in dognames from first line in file
-          line = infile.readline().rstrip()
+          # line = infile.readline().rstrip()
+          line = line.rstrip()
           if line != "" and line not in dognames_dic:
               dognames_dic[line] = 1
 
