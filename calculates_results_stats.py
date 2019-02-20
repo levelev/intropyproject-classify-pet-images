@@ -87,9 +87,8 @@ def calculates_results_stats(results_dic):
         # Labels Match Exactly?
         if results_dic[key][2] == 1:
             results_stats_dic['n_match'] += 1
-
             # Labels Match (above) AND isDog? True
-            if results_dic[key][3] == 1:
+            if results_dic[key][3] == 1 and results_dic[key][4] == 1:
                 results_stats_dic['n_correct_breed'] += 1
 
         # Pet Image Label is a Dog - counts number of dog images
