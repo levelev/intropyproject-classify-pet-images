@@ -128,3 +128,14 @@ def calculates_results_stats(results_dic):
         results_stats_dic['pct_correct_notdogs'] = 0.0
 
     return results_stats_dic
+
+
+# TODO
+
+# ** Statistics from calculates_results_stats() function:
+# N Images: 40  N Dog Images: 10  N NotDog Images: 30
+# Pct Corr dog:  70.0 Pct Corr NOTdog:  10.0  Pct Corr Breed:  90.0
+
+# ** Check Statistics - calculated from this function as a check:
+# N Images: 40  N Dog Images: 10  N NotDog Images: 30
+# Pct Corr dog:  70.0 Pct Corr NOTdog:  96.7  Pct Corr Breed:  60.0
