@@ -75,8 +75,25 @@ def adjust_results4_isadog(results_dic, dogfile):
           line = infile.readline().rstrip()
           if line != "" and line not in dognames_dic:
               dognames_dic[line] = 1
-    print(dognames_dic)
+
+    for key in results_dic:
+        if results_dic[key][0] in dognames_dic:
+            # Classifier Label IS image of Dog (e.g. found in dognames_dic)
+            # appends (1, 1) because both labels are dogs
+            if results_dic[key][1] in dognames_dic:
+                results_dic[key].extend((1, 1))
+            else:
+                results_dic[key].extend((1, 0))
+        # Pet Image Label IS NOT a Dog image (e.g. NOT found in dognames_dic)
+        else:
+            # classifier WRONG, detects dog where is not
+            if results_dic[key][1] in dognames_dic:
+                results_dic[key].extend((0,1))
+            else:
+                results_dic[key].extend((0,0))
 
 
+# TODO: Search for substring in Dognames i.e.: 
+#  should find 'airedale' in 'airedale, airedale terrier'
    
 
