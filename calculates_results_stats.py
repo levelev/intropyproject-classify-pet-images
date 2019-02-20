@@ -100,9 +100,10 @@ def calculates_results_stats(results_dic):
             # counts number of correct dog classifications
             if results_dic[key][4] == 1:
                 results_stats_dic['n_correct_dogs'] += 1
-            else:
-                # Classifier classifies image as NOT a Dog(& pet image isn't a dog)
-                # counts number of correct NOT dog clasifications.
+        else:
+            # Classifier classifies image as NOT a Dog(& pet image isn't a dog)
+            # counts number of correct NOT dog clasifications.
+            if results_dic[key][4] == 0:
                 results_stats_dic['n_correct_notdogs'] += 1
 
     # calculates number of total images
